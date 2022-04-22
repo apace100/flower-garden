@@ -1,12 +1,15 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.fabricmc.example.mixin",
+  "package": "io.github.apace100.flowerfix.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "OverrideOffsetMixin",
+    "RandomizationMixin",
+    "RandomMixin"
   ],
   "client": [
-    "ExampleMixin"
+    "ChunkRendererRegionAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

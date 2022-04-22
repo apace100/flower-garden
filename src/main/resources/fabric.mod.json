@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "flower-garden",
   "version": "${version}",
 
-  "name": "Example Mod",
+  "name": "Flower Garden",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
     "Me!"
@@ -13,26 +13,36 @@
     "sources": "https://github.com/FabricMC/fabric-example-mod"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "MIT",
+  "icon": "assets/flower-garden/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "io.github.apace100.flowerfix.FlowerGarden"
+    ],
+    "client": [
+      "io.github.apace100.flowerfix.FlowerGardenClient"
+    ],
+    "server": [
+      "io.github.apace100.flowerfix.FlowerGardenServer"
+    ],
+    "cardinal-components-chunk": [
+      "io.github.apace100.flowerfix.FlowerGarden"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "flower-garden.mixins.json"
   ],
+  "custom": {
+    "cardinal-components": [
+      "flower-garden:flower_offsets"
+    ]
+  },
 
   "depends": {
     "fabricloader": ">=0.11.3",
-    "fabric": "*",
     "minecraft": "1.17.x",
     "java": ">=16"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }
